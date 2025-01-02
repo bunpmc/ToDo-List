@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-Do List</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="app-container">
+            <!-- Navigation Bar -->
+            <nav class="navbar">
+                <div class="logo">To-Do App</div>
+                <ul class="nav-links">
+                    <li><a href="#all">All Tasks</a></li>
+                    <li><a href="#completed">Completed</a></li>
+                    <li><a href="#pending">Pending</a></li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <section class="task-input-section">
+                    <h1>Plan Your Day</h1>
+                    <form action="MainController" method="GET" id="todoForm">
+                        <input name="action" value="addTodo" type="hidden">
+                        <input name="name" type="text" id="todoName" placeholder="Enter task name" />
+                        <textarea name="body" id="todoContent" placeholder="Enter task content"></textarea>
+                        <select name="status" id="status">
+                            <option value="pending">Pending</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                        <button onclick="addTodo()">Add Todo</button>
+                    </form>
+                </section>
+
+                <section class="task-list-section">
+                    <h2>Your Tasks</h2>
+                    <ul id="taskList" class="task-list"></ul>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>&copy; 2025 Pastel To-Do App. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
